@@ -1,0 +1,96 @@
+<aside id="default-sidebar" class="fixed left-0 top-[64px] w-[266px] h-full" aria-label="Sidenav">
+  <div class=" h-screen bg-[#ffffff]">
+      <ul>
+          <li class="mb-1 w-[266.31px] h-[63.13px] pt-[6.9px] pl-[22.69px] pb-[6.9px] pr-[22.69px]">
+            <form class="max-w-md mx-auto">
+              <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+              <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                      </svg>
+                  </div>
+                  <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pesquisar" required />
+              </div>
+            </form>
+          </li>
+          <div class="flex flex-wrap justify-center items-center">
+              <button type="button"
+                  class="flex justify-center items-center p-6 mb-[10px] text-black hover:bg-gray-200  w-[199px] h-[45.37px] border-black border-[0.99px] rounded-[7.89px]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-[15.25px] h-[18.15px]">
+                      <path fill-rule="evenodd"
+                          d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                          clip-rule="evenodd" />
+                  </svg>
+                  <span
+                      class="flex ml-1  font-['Opens Sans'] text-[16px] leading-[26.86px] text-black"
+                      data-modal-target="modal-create" data-modal-toggle="modal-create">Novo</span>
+              </button>
+          </div>
+          <div class="overflow-y-auto max-h-[400px] flex flex-wrap justify-center items-center scrollbar-thin">
+              <div *ngFor="let disciplina of disciplina" class="dropdown-container">
+                  <button type="button"
+                      class="flex items-center mb-2 mt-1 w-[234.75px] text-black hover:bg-gray-200  rounded-[7.89px] h-[32.55px] pt-[4.93px] pl-[10.93px] pb-[4.93px] pr-[14.8px]"
+                      (click)="toggleDropdown(disciplina)">
+                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                          <path fill-rule="evenodd" d="M3 6a2 2 0 0 1 2-2h5.532a2 2 0 0 1 1.536.72l1.9 2.28H3V6Zm0 3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9H3Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span [routerLink]="['/etapas']"
+                            class="flex-1 ml-2 text-left font-['Opens Sans'] text-[15.78px] font-normal overflow-hidden text-ellipsis whitespace-nowrap">{{disciplina.disciplina_descricao}}</span>
+                    </button>
+                </div>
+            </div>
+        </ul>
+        <ul class="pt-5 mt-5 space-y-2 border-t border-gray-700"> </ul>
+        <div class=" flex flex-wrap justify-center items-center">
+            <button type="button"
+                class="flex items-center w-[234.75px] mb-1 mt-1 text-black hover:bg-gray-200  rounded-[7.89px] h-[32.55px] pt-[4.93px] pl-[30px] pb-[4.93px] pr-[14.8px]"
+                a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-[17.6px] h-[16.86px]">
+                    <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span class="flex-1 ml-2 text-left font-['Opens Sans'] text-[15.78px] font-normal">Favoritos </span>
+            </button>
+            <button type="button"
+                class="flex items-center w-[234.75px] mb-1 mt-4 text-black hover:bg-gray-200  rounded-[7.89px] h-[32.55px] pt-[4.93px] pl-[30px] pb-[4.93px] pr-[14.8px]"
+                a>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-[17.6px] h-[16.86px]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                </svg>
+                <span class="flex-1 ml-2 text-left font-['Opens Sans'] text-[15.78px] font-normal">Recentes</span>
+            </button>
+            <button type="button"
+                class="flex items-center w-[234.75px] mb-1 mt-4 text-black hover:bg-gray-200  rounded-[7.89px] h-[32.55px] pt-[4.93px] pl-[30px] pb-[4.93px] pr-[14.8px]"
+                (click)=listaCompartilhada() a>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-[17.6px] h-[16.86px]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                </svg>
+                <span class="flex-1 ml-2 text-left font-['Opens Sans'] text-[15.78px] font-normal">Lista
+                    Compartilhada</span>
+            </button>
+        </div>
+        <div class="absolute bottom-0 w-[266.31px] h-[120px] justify-center">
+            <div class="justify-center items-center flex-wrap flex">
+                <button type="button"
+                    class="flex items-center w-[234.75px] mb-1 mt-1 text-black hover:bg-gray-200  rounded-[7.89px] h-[32.55px] pt-[4.93px] pl-[15.93px] pb-[4.93px]"
+                    a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-[17.6px] h-[16.86px]">
+                        <path fill-rule="evenodd"
+                            d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="flex-1 ml-2 text-left font-['Opens Sans'] text-[16px] font-normal">Configurações</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</aside>

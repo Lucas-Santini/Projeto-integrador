@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<app-menu-lateral></app-menu-lateral>
+
+<div class="flex flex-col items-center min-h-screen">
+  <div class="w-full bg-gray-100 p-4 flex justify-between items-center">
+    <div class="mr-10 flex items-center space-x-4"></div>
+  </div>
+
+  <div class="flex flex-1 items-center justify-center w-full">
+    <!-- breadcrumb -->
+    <!-- DOCUMENTAÇÂO: https://udayvunnam.github.io/xng-breadcrumb/#/ -->
+    <xng-breadcrumb>
+      <ng-container *xngBreadcrumbItem="let breadcrumb">
+        <ng-container>{{ breadcrumb }}</ng-container>
+      </ng-container>
+    </xng-breadcrumb>
+
+    <div class="w-full max-w-screen-lg flex">
+      <div class="flex-1 z-0 bg-gray-100 p-4">
+        <app-barra-pesquisa-projeto></app-barra-pesquisa-projeto>
+        <app-button-modal-criar-projeto></app-button-modal-criar-projeto>
+
+        <a [routerLink]="['/disciplinas']" class="block">
+          <div
+            class="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white hover:bg-gray-100 cursor-pointer"
+          >
+            <img
+              class="w-full"
+              src="https://via.placeholder.com/150"
+              alt="Imagem do projeto"
+            />
+            <div class="font-bold text-xl mb-2">{{ empresa.empresa_nome }}</div>
+            <p class="text-gray-700 text-base">View Project</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div>
+  <div class="flex">
+    <div id="SidBar" class="col-span-2 bg-gray-500 w-[13.50%]">
+      
+    </div>
+
+    <div class="z-0">
+      <div class="flex content-center justify-between items-center bg-gray-100">
+        <app-barra-pesquisa-projeto></app-barra-pesquisa-projeto>
+        <div class="mr-10">
+          <app-button-modal-criar-projeto></app-button-modal-criar-projeto>
+          <app-home-arquivos-components></app-home-arquivos-components>
+        </div>
+      </div>
+
+      <app-home-arquivos-components></app-home-arquivos-components>
+    </div>
+  </div>
+</div> -->

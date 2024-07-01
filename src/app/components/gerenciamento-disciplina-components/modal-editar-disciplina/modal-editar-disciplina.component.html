@@ -1,0 +1,36 @@
+<div class="modal-container w-[450px] p-5">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-2 mt-5 mb-5">
+        <span class="absolute top-10 right-7 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-500"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </span>
+        Editar Disciplina
+    </h3>
+    <form class="p-4 md:p-2">
+        <div class="grid gap-4 mb-5 grid-cols-1">
+            <div class="col-span-2">
+                <label for="name-discipline" class="block mb-2 text-sm text-gray-900 dark:text-white">Nome da
+                    Disciplina</label>
+                <input type="text" name="name-discipline" id="name-discipline"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="Informe o nome da disciplina" required="">
+            </div>
+            <!--
+            <div class="col-span-2">
+                <label for="project-name" class="block mb-2 text-sm text-gray-900 dark:text-white">Nome do
+                    Projeto</label>
+                <input type="number" name="project-name" id="project-name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="Informe o nome do projeto" required="">
+            </div>
+            -->
+        </div>
+        <button type="submit"
+            class="text-white inline-flex justify-center items-center bg-[#4381A7] hover:bg-[color:var(--cinza-principal-medio)] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mt-5 cursor-pointer w-[395px]">
+            Salvar
+        </button>
+    </form>
+</div>

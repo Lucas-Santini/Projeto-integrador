@@ -1,0 +1,34 @@
+<button type="button" class="px-14 py-3 text-md font-semibold text-white inline-flex items-center bg-[color:var(--cinza-principal-escuro)] hover:bg-[color:var(--cinza-principal-medio)] rounded-lg text-center" (click)="openModal()">
+  Nova Lista
+</button>
+
+<ng-template #modalTemplate>
+  <div class="modal w-[680px]">
+    <h1 mat-dialog-title>Criar Lista Compartilhada</h1>
+    <mat-dialog-content>
+      <div class="flex justify-between items-center">
+        <h1 mat-dialog-title>Criar Lista Compartilhada</h1>
+        <button mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <mat-dialog-content>
+        <form class="space-y-2">
+          <div>
+            <label for="nome" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
+            <div class="flex">
+              <input type="text" id="descricao" formControlName="lista_compartilhada_descricao" class="rounded-none rounded-r-md bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Documentação Barra Shopping">
+            </div>
+          </div>
+    
+          <div class="flex justify-end">
+            <button type="submit" class="px-5 py-2 mt-5 text-sm font-medium text-white bg-[#4381A7] hover:bg-[#357599] rounded-lg text-center w-64 h-10 mx-auto">
+              Criar
+            </button>
+          </div>
+        </form>
+      </mat-dialog-content>
+    </mat-dialog-content>
+  </div>
+</ng-template>
+
